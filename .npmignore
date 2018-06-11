@@ -1,0 +1,11 @@
+node_modules/
+lib/
+dist/
+.DS_Store
+*.icloud
+*.gz
+*.py
+package-lock.json
+CROHME-extractor/
+*.log
+src/**/*.json

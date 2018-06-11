@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FAFAFA;
+  text-align: center;
+  margin: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.description {
+
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--colum {
+  flex-direction: column;
+}
+
+.controlls {
+  display: flex;
+  margin: 1em auto;
+  justify-content: space-around;
+  max-width: 400px;
+}
+
+.input, .digit, .canvas, canvas {
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  margin: 1rem;
+  background-color: #EEE;
+}
+
+.canvas--expression {
+  background-color: #EEE;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87) 75%, transparent 75%, transparent 100%);
+  background-size: 20px 2px;
+  background-repeat: repeat-x;
+  background-position: center 75%;
+}
+
+.digit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10em;
+  width: 150px;
+  height: 200px;
+  font-weight: 300;
+}
+
+section + section {
+  margin-top: 2em;
+}
+
+
+.title {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.54)
+}
+
+.instruction {
+  font-style: italic;
+}
+
+.footer {
+  color: rgba(0, 0, 0, 0.54);
+  margin-top: 2em;
+}
+
+.expression {
+  font-size: 1.5em;
+}
+
+.latex {
+  font-size: 4em;
+}

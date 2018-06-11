@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Handwritten Mathematics Recogniser</title>
+    <meta name="author" content="Maciej Caputa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <section class="handwritten-mathematics-recogniser">
+      <h1 class="title">Handwritten Mathematics Recogniser</h1>
+      <p class="description">
+
+      </p>
+    </section>
+
+
+    <section class="handwritten-digit-recogniser card">
+      <div class="card-content">
+        <h2 class="subtitle">Handwritten Digit Recogniser</h2>
+        <p class="description"></p>
+        <p class="instruction">Draw a single digit on a canvas on the left.</p>
+
+        <div class="flex">
+          <canvas class="canvas input" width="150" height="200"></canvas>
+          <div class="digit"></div>
+        </div>
+        <a class="waves-effect waves-light btn recognise">Recognise</a>
+        <a class="waves-effect waves-light btn clear">Clear</a>
+      </div>
+    </section>
+
+
+    <section class="handwritten-expression-recogniser card">
+      <div class="card-content">
+        <h2 class="subtitle">Handwritten Expression Recogniser</h2>
+        <p class="description">
+          Recognises:
+          <ul>
+            <li>digits: \(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</li>
+            <li>operators: \((, ), +, -, \times, \div, \sqrt, =, .\)</li>
+            <li>relations: \(**, *^*, *_*, \frac{*}{*}, \sqrt{*}\)</li>
+          </ul>
+        </p>
+        <p class="instruction">Draw a mathematical expression on the canvas below.</p>
+        <p class="instruction">Make sure that your symbols do not overlap and that they are written in one part.</p>
+
+
+        <canvas class="canvas canvas--expression input" width="600" height="280"></canvas>
+        <div class="controlls">
+          <!-- Processing
+          <div class="switch">
+            <label>
+              Hide
+              <input type="checkbox">
+              <span class="lever"></span>
+              Show
+            </label>
+          </div> -->
+          <a class="waves-effect waves-light btn recognise">Recognise</a>
+          <a class="waves-effect waves-light btn clear">Clear</a>
+        </div>
+        <div class="segmentation"></div>
+        <div class="graph"></div>
+        <div class="expression"></div>
+        <div class="latex"></div>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <p>Copyright (c) 2018 Maciej Caputa All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- <script src="./bundle.js"></script> -->
+    <script defer id="common-js" data-main="./demo.js" src="./common.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  </body>
+</html>
