@@ -199,6 +199,8 @@ export class HandwrittenExpressionRecogniserDNN {
 
   private static isSuperscript(layer1: Layer, layer2: Layer, level: number): boolean {
     if (
+      layer1.recognition.toString() === '.' ||
+      layer2.recognition.toString() === '.' ||
       this.isOperation(layer1.recognition.toString()) ||
       level >= 0 && this.isOperation(layer2.recognition.toString())
     ) {
@@ -220,6 +222,8 @@ export class HandwrittenExpressionRecogniserDNN {
   private static isSubscript(layer1: Layer, layer2: Layer, level: number): boolean {
     // Level cannot be change when a symbol in an operation.
     if (
+      layer1.recognition.toString() === '.' ||
+      layer2.recognition.toString() === '.' ||
       this.isOperation(layer1.recognition.toString()) ||
       level <= 0 && this.isOperation(layer2.recognition.toString())
     ) {

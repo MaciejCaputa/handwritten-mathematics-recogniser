@@ -49,7 +49,7 @@ import {
   const clearButton = document.querySelector(`${scope} .clear`) as HTMLButtonElement;
 
   const segmentation = document.querySelector(`${scope} .segmentation`);
-  const expression = document.querySelector(`${scope} .expression`);
+  const expression = document.querySelector(`${scope} .expression`) as HTMLTextAreaElement;
   const latex = document.querySelector(`${scope} .latex`);
 
   recogniseButton.addEventListener('click', () => {
@@ -66,7 +66,7 @@ import {
 
     const recognition = HandwrittenExpressionRecogniser.recognise(canvas);
 
-    expression.innerHTML = recognition;
+    expression.value = recognition;
     latex.innerHTML = `$$${recognition}$$`;
 
     // Render latex on the screen.
@@ -75,7 +75,7 @@ import {
 
   clearButton.addEventListener('click', () => {
     drawer.clear();
-    expression.innerHTML = '';
+    expression.value = '';
     latex.innerHTML = '';
   });
 })();

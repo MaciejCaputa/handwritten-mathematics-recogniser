@@ -5,84 +5,114 @@
     <title>Handwritten Mathematics Recogniser</title>
     <meta name="author" content="Maciej Caputa">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
-
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Handwritten Mathematics Recognizer"/>
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <section class="handwritten-mathematics-recogniser">
-      <h1 class="title">Handwritten Mathematics Recogniser</h1>
-      <p class="description">
 
-      </p>
+    <section>
+      <h1 class="title">math2latex</h1>
+      <h2 class="subtitle">Convert handwritten mathematics to latex.</h2>
+      <p class="description">Powered by <span class="highlight">Handwritten Mathematics Recognizer</span> - easy and abstracted way to recognize handwritten mathematics in a browser or in a web view.</p>
     </section>
 
+    <div class="container">
+      <div class="tab-wrap">
+        <!-- active tab on page load gets checked attribute -->
+        <input type="radio" id="tab1" name="tabGroup1" class="tab">
+        <label for="tab1">Handwritten Digit Recognizer</label>
 
-    <section class="handwritten-digit-recogniser card">
-      <div class="card-content">
-        <h2 class="subtitle">Handwritten Digit Recogniser</h2>
-        <p class="description"></p>
-        <p class="instruction">Draw a single digit on a canvas on the left.</p>
+        <input type="radio" id="tab2" name="tabGroup1" class="tab" checked>
+        <label for="tab2">Handwritten Expression Recognizer</label>
 
-        <div class="flex">
-          <canvas class="canvas input" width="150" height="200"></canvas>
-          <div class="digit"></div>
+        <!-- Tab 1 -->
+        <div class="tab__content">
+          <section class="handwritten-digit-recogniser card">
+              <div class="card-content">
+                <h3 class="subtitle">Handwritten Digit Recognizer</h3>
+                <p class="description"></p>
+                <p class="instruction">Draw a single digit on a canvas on the left.</p>
+                <div class="digits">
+                  <canvas class="canvas input" width="150" height="200"></canvas>
+                  <ion-icon class="arrow" name="arrow-round-forward"></ion-icon>
+                  <div class="digit"></div>
+                </div>
+                <div class="controlls">
+                  <a class="button recognise">Recognize</a>
+                  <a class="button clear">Clear</a>
+                </div>
+              </div>
+            </section>
         </div>
-        <a class="waves-effect waves-light btn recognise">Recognise</a>
-        <a class="waves-effect waves-light btn clear">Clear</a>
-      </div>
-    </section>
 
+        <!-- Tab 2 -->
+        <div class="tab__content">
+          <section class="handwritten-expression-recogniser card">
+            <div class="card-content">
+              <h3 class="subtitle">Handwritten Expression Recognizer</h3>
 
-    <section class="handwritten-expression-recogniser card">
-      <div class="card-content">
-        <h2 class="subtitle">Handwritten Expression Recogniser</h2>
-        <p class="description">
-          Recognises:
-          <ul>
-            <li>digits: \(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</li>
-            <li>operators: \((, ), +, -, \times, \div, \sqrt, =, .\)</li>
-            <li>relations: \(**, *^*, *_*, \frac{*}{*}, \sqrt{*}\)</li>
-          </ul>
-        </p>
-        <p class="instruction">Draw a mathematical expression on the canvas below.</p>
-        <p class="instruction">Make sure that your symbols do not overlap and that they are written in one part.</p>
-
-
-        <canvas class="canvas canvas--expression input" width="600" height="280"></canvas>
-        <div class="controlls">
-          <!-- Processing
-          <div class="switch">
-            <label>
-              Hide
-              <input type="checkbox">
-              <span class="lever"></span>
-              Show
-            </label>
-          </div> -->
-          <a class="waves-effect waves-light btn recognise">Recognise</a>
-          <a class="waves-effect waves-light btn clear">Clear</a>
+              <p class="instruction">Draw a mathematical expression on the canvas below.</p>
+              <p class="instruction">Make sure that your symbols do not overlap and that they are written in one part.</p>
+              <canvas class="canvas canvas--expression input" width="600" height="280"></canvas>
+              <div class="controlls">
+                <a class="button recognise">Recognize</a>
+                <a class="button clear">Clear</a>
+              </div>
+              <div class="segmentation"></div>
+              <div class="graph"></div>
+              <input class="expression">
+              <div class="latex"></div>
+              <div class="types">
+                <span>Recognizes:</span>
+                <br>
+                <ul class="types__list">
+                  <li class="types__list__item">digits: \(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</li>
+                  <li class="types__list__item">operators: \((, ), +, -, \times, \div, \sqrt, =, .\)</li>
+                  <li class="types__list__item">relations: \(**, *^*, *_*, \frac{*}{*}, \sqrt{*}\)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="segmentation"></div>
-        <div class="graph"></div>
-        <div class="expression"></div>
-        <div class="latex"></div>
       </div>
-    </section>
+    </div>
 
+    <article class="features">
+        <section class="features__feature">
+            <h4 class="features__feature__heading">Usage</h4>
+            <p class="features__feature__copy">The recognition is done through the handwritten digit recogniser which takes a canvas as an input and returns a corresponding latex code. You can download the recognition module from the <a class="highlight" href="https://www.npmjs.com/package/handwritten-mathematics-recogniser">NPM</a> and import it into your application. It is embeddable in any browser and web view.</p>
+          </section>
+        <section class="features__feature">
+          <h4 class="features__feature__heading">Implementation</h4>
+          <p class="features__feature__copy">The codebase consists of Python and TensorFlow scripts producing trained models used by the recognizers implemented in TypeScript to recognise a digit or an expression handwritten on an HTML canvas. Optionally, the package provides a functionality for a user to handwrite mathematics on an HTML canvas.</p>
+        </section>
+        <section class="features__feature">
+            <h4 class="features__feature__heading">Future Work and Contribution</h4>
+            <p class="features__feature__copy">The future development includes extending the number of symbols that are recognisable by the system to alphanumeric and other mathematical symbols as well as further improvements in the accuracy of symbol and relation identification. If you are interested in contributing then check out the <a class="highlight" href="https://github.com/MaciejCaputa/handwritten-mathematics-recogniser">project repo</a>.</p>
+          </section>
+      </article>
+
+    <div class="socials">
+      <a class="socials__social" href="https://www.npmjs.com/package/handwritten-mathematics-recogniser">
+        <ion-icon class="socials__social__icon" name="logo-npm"></ion-icon>
+        <span class="socials__social__text">NPM</span>
+      </a>
+      <a class="socials__social" href="https://github.com/MaciejCaputa/handwritten-mathematics-recogniser">
+        <ion-icon class="socials__social__icon" name="logo-github"></ion-icon>
+        <span class="socials__social__text">GitHub</span>
+      </a>
+    </div>
 
     <footer class="footer">
-      <p>Copyright (c) 2018 Maciej Caputa All Rights Reserved.</p>
+      <a href="https://maciejcaputa.com">Copyright (c) 2018 Maciej Caputa All Rights Reserved.</a>
     </footer>
 
-
-    <!-- <script src="./bundle.js"></script> -->
-    <script defer id="common-js" data-main="./demo.js" src="./common.js"></script>
+    <script src="./bundle.js"></script>
+    <!-- <script defer id="common-js" data-main="./demo.js" src="./common.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
   </body>
 </html>

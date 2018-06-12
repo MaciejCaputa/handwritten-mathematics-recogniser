@@ -1,6 +1,6 @@
 {
   "name": "handwritten-mathematics-recogniser",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Maciej Caputa <maciej.caputa.pl@gmail.com> (https://maciejcaputa.com/)",
   "license": "MIT",
   "description": "Easy and abstracted way to recognise handwritten mathematics in a browser or in a web view.",
@@ -15,6 +15,7 @@
     "serve": "gulp serve"
   },
   "devDependencies": {
+    "browserify": "^16.2.2",
     "copy-webpack-plugin": "^4.4.1",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^2.6.4",
@@ -22,8 +23,10 @@
     "gulp-webserver": "^0.9.1",
     "merge2": "^1.2.1",
     "ts-loader": "^3.5.0",
+    "tsify": "^4.0.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {}
 }
